@@ -1,0 +1,22 @@
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
+    tryItOutEnabled: true
+    filter: false
+    syntaxHighlight:
+      activated: true
+    showExtensions: true
+  api-docs:
+    path: /v2/api-docs
+    version: OPENAPI_3_0
+ors:
+  engine:
+    source_file: /home/ors/files/illinois-latest.osm.pbf
+    profile_default:
+      maximum_distance: 10000000
+      maximum_waypoints: 500
+      maximum_snapping_radius: 4000
+    profiles:
+      car:
+        enabled: true

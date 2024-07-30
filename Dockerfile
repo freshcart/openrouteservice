@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # hadolint ignore=DL3002
 USER root
-
+VOLUME /freshcart
 WORKDIR /tmp/ors
 
 COPY ors-api /tmp/ors/ors-api

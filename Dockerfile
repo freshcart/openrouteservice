@@ -4,7 +4,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # hadolint ignore=DL3002
 USER root
-VOLUME /freshcart
 WORKDIR /tmp/ors
 
 COPY ors-api /tmp/ors/ors-api
@@ -30,7 +29,7 @@ FROM docker.io/amazoncorretto:21.0.3-alpine3.19 AS publish
 # Build ARGS
 ARG UID=1000
 ARG GID=1000
-ARG OSM_FILE=/freshcart/pbf/illinois-latest.osm.pbf
+ARG OSM_FILE=freshcart/pbf/illinois-latest.osm.pbf
 ARG ORS_HOME=/home/ors
 
 # Set the default language

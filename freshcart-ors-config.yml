@@ -12,7 +12,7 @@ springdoc:
     version: OPENAPI_3_0
 ors:
   engine:
-    source_file: /home/ors/files/illinois-latest.osm.pbf
+    source_file: /freshcart/pbf/illinois-latest.osm.pbf
     profile_default:
       maximum_distance: 10000000
       maximum_waypoints: 500

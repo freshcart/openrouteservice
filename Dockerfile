@@ -56,7 +56,7 @@ RUN ls -al /tmp/ors
 RUN mkdir -p /freshcart/pbf && chmod -R 777 /freshcart
 
 # Copy the OSM file to the correct location
-COPY --chown=ors:ors ./illinois-latest.osm.pbf /freshcart/pbf/illinois-latest.osm.pbf
+# COPY --chown=ors:ors ./illinois-latest.osm.pbf /freshcart/pbf/illinois-latest.osm.pbf
 
 # Debugging step: Print the contents of the /freshcart directory
 RUN ls -al /freshcart/pbf

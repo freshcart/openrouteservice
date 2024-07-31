@@ -17,7 +17,7 @@ RUN mvn -q clean package -DskipTests
 # Copy the example config files to the build folder
 COPY ./ors-config.yml /tmp/ors/example-ors-config.yml
 COPY ./ors-config.env /tmp/ors/example-ors-config.env
-COPY ./freshcart-ors-config.env /tmp/ors/freshcart-ors-config.env
+COPY ./freshcart-ors-config.yml /tmp/ors/freshcart-ors-config.yml
 
 # Rewrite the example config to use the right files in the container
 RUN sed -i "/ors.engine.source_file=.*/s/.*/ors.engine.source_file=\/home\/ors\/files\/example-heidelberg.osm.gz/" "/tmp/ors/example-ors-config.env" && \

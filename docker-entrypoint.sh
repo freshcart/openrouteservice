@@ -354,6 +354,7 @@ fi
 
 # wget url -P /path/to/folder
 wget "https://download.geofabrik.de/north-america/us/illinois-latest.osm.pbf" -P /home/ors/files
+wget "https://raw.githubusercontent.com/freshcart/freshcart.github.io/main/freshcart-ors-config.yml" -P /home/ors/config
 
 echo "#####################"
 echo "# ORS startup phase #"

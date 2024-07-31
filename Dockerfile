@@ -48,9 +48,20 @@ RUN apk update && apk add --no-cache openssl bash yq jq  && \
 COPY --chown=ors:ors --from=build /tmp/ors/ors-api/target/ors.jar /ors.jar
 COPY --chown=ors:ors --from=build /tmp/ors/example-ors-config.yml /example-ors-config.yml
 COPY --chown=ors:ors --from=build /tmp/ors/example-ors-config.env /example-ors-config.env
-COPY --chown=ors:ors ./$OSM_FILE /illinois-latest.osm.pbf
-COPY --chown=ors:ors ./docker-entrypoint.sh /entrypoint.sh
 
+# Debugging step: Print the contents of the current directory
+RUN ls -al /tmp/ors
+
+# Ensure the /freshcart directory exists and is writable
+RUN mkdir -p /freshcart/pbf && chmod -R 777 /freshcart
+
+# Copy the OSM file to the correct location
+COPY --chown=ors:ors ./illinois-latest.osm.pbf /freshcart/pbf/illinois-latest.osm.pbf
+
+# Debugging step: Print the contents of the /freshcart directory
+RUN ls -al /freshcart/pbf
+
+COPY --chown=ors:ors ./docker-entrypoint.sh /entrypoint.sh
 
 ENV BUILD_GRAPHS="False"
 ENV REBUILD_GRAPHS="False"

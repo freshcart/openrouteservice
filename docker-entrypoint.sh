@@ -352,6 +352,9 @@ if [ "${print_migration_info}" = "true" ]; then
   info ">>> End of migration information <<<"
 fi
 
+# wget url -P /path/to/folder
+wget "https://download.geofabrik.de/north-america/us/illinois-latest.osm.pbf" -P /home/ors/files
+
 echo "#####################"
 echo "# ORS startup phase #"
 echo "#####################"

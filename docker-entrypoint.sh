@@ -353,7 +353,7 @@ if [ "${print_migration_info}" = "true" ]; then
 fi
 
 # wget url -P /path/to/folder
-wget "https://download.geofabrik.de/north-america/us/illinois-latest.osm.pbf" -P /home/ors/files
+# wget "https://download.geofabrik.de/north-america/us/illinois-latest.osm.pbf" -P /home/ors/files
 wget "https://raw.githubusercontent.com/freshcart/freshcart.github.io/main/freshcart-ors-config.yml" -P /home/ors/config
 mv /home/ors/config/freshcart-ors-config.yml /home/ors/config/ors-config.yml
 

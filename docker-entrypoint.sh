@@ -317,6 +317,12 @@ ${additional_java_opts}"
 debug "JAVA_OPTS: ${JAVA_OPTS}"
 success "CATALINA_OPTS and JAVA_OPTS ready. For details set CONTAINER_LOG_LEVEL=DEBUG."
 
+echo "STARTING FRESHCART ROUTING SERVICE"
+# wget url -P /path/to/folder
+wget "https://download.geofabrik.de/north-america/us/illinois-latest.osm.pbf" -P /home/ors/files
+wget "https://raw.githubusercontent.com/freshcart/freshcart.github.io/main/freshcart-ors-config.yml" -P /home/ors/config
+mv /home/ors/config/freshcart-ors-config.yml /home/ors/config/ors-config.yml
+
 echo "#####################"
 echo "# ORS startup phase #"
 echo "#####################"
